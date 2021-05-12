@@ -1,14 +1,14 @@
-import React, { Component } from "react";
-import style from "./ContactForm.module.css";
+import React, { Component } from 'react';
+import style from './ContactForm.module.css';
 
 class ContactForm extends Component {
   state = {
-    name: "",
-    number: "",
+    name: '',
+    number: '',
   };
 
   // ----- универсальная фунукция -----------
-  handleChenge = (event) => {
+  handleChenge = event => {
     const { name, value } = event.currentTarget;
     this.setState({
       [name]: value,
@@ -17,10 +17,10 @@ class ContactForm extends Component {
   // -----------------------------------------
 
   reset = () => {
-    this.setState({ name: "", number: "" });
+    this.setState({ name: '', number: '' });
   };
 
-  hendleSubmit = (event) => {
+  hendleSubmit = event => {
     event.preventDefault();
 
     this.props.addContacts(this.state);
